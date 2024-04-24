@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+            <a href="#"> <i class='bx bxs-wallet' ></i> CashFlow Manager</a>
+        </div>
+        <div class="nav-links">
+            <ul class="links">
+                <li class="link"><a href="#">Dashboard</a></li>
+                <li class="link"><a href="#">Analytics</a></li>
+                <li class="link"><a href="#">Export</a></li>
+                <li class="link"><a href="#">Setting</a></li>
+            </ul>
+        </div>
+        <span class="account" onclick="toggleMenu()"><i class='bx bxs-user-circle'></i></span></div>
+    </div>
+    <div class="profile-links-wrap" id="subMenu">
+        <div class="profile-links">
+            <div class="user-info">
+                <i class='bx bxs-user-circle'></i>
+                <h2>Akhdan Farros</h2>
+                <h3>akhdan.arvin@gmail.com</h3>
+            </div>
+            <hr>
+            <div class="menu-links">
+                <a href="#" class="sub-menu-links">
+                    <i class="bx bxs-user-circle"></i>
+                    <p>Account</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-links">
+                    <i class='bx bxs-cog' ></i>
+                    <p>Settings</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-links">
+                    <i class="bx bxs-info-circle"></i>
+                    <p>About</p>
+                    <span>></span>
+                </a>
+                <a href="login.html" class="sub-menu-links">
+                    <i class="bx bx-log-out"></i>
+                    <p>Log Out</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mainContent">
+    <div class="cardBox">
+            <div class="card">
+                <div class="cardToday">
+                <div class="number">Rp. 0  </div>
+                <div class="cardName"> Today Expsense</div>
+                </div>
+                <div class="iconBox"><span class="material-symbols-outlined">
+                    today
+                    </span></div>
+            </div>
+            <div class="card">
+                <div class="cardMonthly">
+                <div class="number">Rp. 0  </div>
+                <div class="cardName"> Monthly Expsense</div>
+                </div>
+                <div class="iconBox"><span class="material-symbols-outlined">
+                    calendar_month
+                    </span></div>
+            </div>
+            <div class="card">
+                <div class="cardCurent">
+                <div class="number">Rp. 0 </div>
+                <div class="cardName"> Curent Balance</div>
+                </div>
+                <div class="iconBox"><span class="material-symbols-outlined">
+                    account_balance_wallet
+                    </span></div>
+            </div>
+    </div>
+
+    <div class="totals">
+        <div class="total">
+        <p id="totalIncome">Total Income:         Rp.0</p>
+        </div>
+        <div class="total">
+        <p id="totalIncome">Total Income:         Rp.0</p>
+        </div>
+    </div>
+
+    <div class="actionButtons">
+        <div class="deleteallTransaction" id="deleteallTransactionBtn">
+            <a href="#" class="deleteall">
+                <span class="material-symbols-outlined">delete</span>
+                
+            </a>
+        </div>
+        <div class="addTransaction" id="addTransactionBtn">
+            <a href="#" class="add">
+                <span class="material-symbols-outlined">add</span>
+                <span> Add Transaction</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="cashflowTable">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Income/Expense</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="dataTransaksi"></tbody>
+        </table>
+    </div>
+
+    <div class="addpopup" id="addTransactionPopup">
+        <div class="popup-content">
+            <a href="#" class="cd-popup-close"><i class='bx bx-x-circle'></i></a>
+            <h2>Add Transaction</h2>
+            <form id="addTransactionForm">
+                <div class="form-input2">
+                    <label for="transactionName">Name</label>
+                    <input type="text" id="transactionName" name="transactionName" class="formInput" required>
+                </div>
+                <div class="form-input2">
+                    <label for="transactionDate">Date</label>
+                    <input type="date" id="transactionDate" name="transactionDate" class="formInput" required>
+                </div>
+                <div class="form-input2">
+                    <label for="transactionPrice">Price</label>
+                    <input type="number" id="transactionPrice" name="transactionPrice" class="formInput" placeholder="Enter Price" required>
+                </div>
+                <div class="form-input2">
+                    <label for="transactionCategory">Category</label>
+                    <select id="transactionCategory" name="transactionCategory" class="formInput">
+                        <option value="Food">Food</option>
+                        <option value="Social">Social</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Personal">Personal</option>
+                        <option value="House">House</option>
+                        <option value="Other">Other..</option>
+                    </select>
+                </div>
+                <div class="form-input2">
+                    <label for="transactionType">Transaction Type</label>
+                    <select id="transactionType" name="transactionType" class="formInput">
+                        <option value="Expense">Expense</option>
+                        <option value="Income">Income</option>
+                    </select>
+                </div>
+                <div class="actionButtons">
+                    <button type="submit" class="add">Add Transaction</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
